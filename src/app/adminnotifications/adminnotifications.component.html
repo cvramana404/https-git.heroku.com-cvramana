@@ -1,0 +1,149 @@
+<!-- <div class="container">
+  <h3> Notifications </h3> <hr/>
+
+  <table class="table">
+    <thead class="bg-info">
+      <th> S.No. </th>
+      <th> Date </th>
+      <th> Title </th>
+    </thead>
+    <tr>
+      <td> 1 </td>
+      <td> 17 Dec 2018</td>
+      <td> Research Review Meeting </td>
+    </tr>
+
+    <tr>
+        <td> 2 </td>
+        <td> 15 Dec 2018</td>
+        <td> Circular for revised Academic regulations for submission of thesis hard copy </td>
+    </tr>
+
+    <tr>
+        <td> 3 </td>
+        <td> 01 Dec 2018</td>
+        <td> VC appeel for voting </td>
+    </tr>
+
+    <tr>
+        <td> 4 </td>
+        <td> 28 Nov 2018 </td>
+        <td> RRM Will Be Conducted </td>
+    </tr>
+
+    <tr>
+        <td> 5 </td>
+        <td> 19 Nov 2018 </td>
+        <td> Management Quota and Spot Admitions </td>
+    </tr>
+
+    <tr>
+        <td> 6 </td>
+        <td> 30 Oct 2018 </td>
+        <td> Holidays List </td>
+        <button type="button" > X </button>
+    </tr>
+
+    <tr> 
+      <button type="button" > X </button>
+
+    </tr>
+    
+
+  </table>
+  
+  
+</div> -->
+
+<div class="container">
+  <input type="text" name="searchTerm" [(ngModel)]=searchTerm>
+
+  <!-- from assets json -->
+  <!-- <table class="table">
+    <thead>
+      <th> SNo </th>
+      <th> Date </th>
+      <th> Title </th>
+    </thead>
+    <tr *ngFor="let i of data">
+      <td> {{i.sno}} </td>
+      <td> {{i.Date}} </td>
+      <td> {{i.Title}} </td>
+    </tr> -->
+
+  <!-- </table> -->
+  <!-- <button type="button" class="btn btn-warning float-left" (click)="test(i)"> edit </button>  -->
+  <!-- <button type="button" class="btn btn-warning float-right"> save </button> -->
+
+
+
+  <!----------Adding Form---------------------->
+
+  <form #ref="ngForm" (ngSubmit)="addto(ref.value)">
+    <div class="form-group">
+      <label> SNo </label>
+      <input type="text" name="name" class="form-control" [(ngModel)]=name>
+      <label> Date </label>
+      <input type="date" name="date" class="form-control" [(ngModel)]=date>
+      <label> Title </label>
+      <input type="text" name="notifications" class="form-control" [(ngModel)]=notifications> <br/>
+      <button type="submit" class="btn btn-warning float-left" > Add </button> <br/>
+      
+    </div>
+    </form> 
+
+
+    <!-------------form Edit-------------------->
+
+    <form #ref2="ngForm" *ngIf="b" (ngSubmit)="save(k)">
+        <div class="form-group">
+            <label> SNo </label>
+            <input type="text" name="name" class="form-control" [(ngModel)]=arr2.name>
+            <label> Date </label>
+            <input type="date" name="date" class="form-control" [(ngModel)]=arr2.date>
+            <label> Title </label>
+            <input type="text" name="notifications" class="form-control" [(ngModel)]=arr2.notifications> <br/>
+            <button type="button" class="btn btn-warning float-left" (click)="done()"> save </button> 
+        </div>   
+
+    </form>
+
+
+
+    <!------------------the table which collect the form data----------------->
+    <!-- <table class="table">
+      <thead>
+        <th> SNO </th>
+        <th> Date </th>
+        <th> Title </th>
+      </thead>
+      <tr *ngFor="let i of arr | search:searchTerm, let in=index ">
+        <td> {{i.name}} </td>
+        <td> {{i.date}} </td>
+        <td> {{i.notifications}} </td>
+        <button type="button" class="btn btn-danger" (click)="delete(in)" > X </button>
+        <button type="submit" class="btn btn-danger" (click)="edit(i)" > edit </button>
+        <button type="button" class="btn btn-danger" (click)="send(i)" > send </button>
+      </tr>
+    </table> -->
+
+
+
+    <!------------------getting data from database----------------->
+    <table class="table">
+      <thead>
+        <th> SNO </th>
+        <th> Date </th>
+        <th> Title </th>
+      </thead>
+      <tr *ngFor="let i of data3 | search:searchTerm, let in=index ">
+        <td> {{i.name}} </td>
+        <td> {{i.date}} </td>
+        <td> {{i.notifications}} </td>
+        <button type="submit" class="btn btn-danger" (click)="delete(i)" > Delete </button>
+        <!-- <button type="button" class="btn btn-danger" (click)="delete(in)" > X </button>
+        <button type="submit" class="btn btn-danger" (click)="edit(i)" > edit </button>
+        <button type="button" class="btn btn-danger" (click)="send(i)" > send </button> -->
+      </tr>
+    </table>
+</div>

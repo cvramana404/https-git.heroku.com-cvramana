@@ -1,0 +1,43 @@
+<div class="container">
+    <button type="button" (click)="save()"> download </button>
+    <!-- <table class="table">
+        <thead>
+          <th> SNO </th>
+          <th> Date </th>
+          <th> Title </th>
+        </thead>
+        <tr *ngFor="let i of arr">
+          <td> {{i.name}} </td>
+          <td> {{i.date}} </td>
+          <td> {{i.name2}} </td>
+          
+        </tr>
+      </table> -->
+
+
+      <!------------------getting data from database----------------->
+
+      <input type="text" name="searchTerm" [(ngModel)]=searchTerm>
+
+
+
+
+
+
+    <table class="table">
+      <thead>
+        <th> SNO </th>
+        <th> Date </th>
+        <th> Title </th>
+      </thead>
+      <tr *ngFor="let i of data4 | search:searchTerm, let in=index ">
+        <td> {{i.name}} </td>
+        <td> {{i.date}} </td>
+        <td> {{i.notifications}} </td>
+        <!-- <button type="button" class="btn btn-danger" (click)="delete(in)" > X </button>
+        <button type="submit" class="btn btn-danger" (click)="edit(i)" > edit </button>
+        <button type="button" class="btn btn-danger" (click)="send(i)" > send </button> -->
+      </tr>
+    </table>
+      
+</div>

@@ -1,0 +1,39 @@
+  <div style="background-image:url(https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?cs=srgb&dl=agriculture-bright-clouds-440731.jpg&fm=jpg);background-size: cover;height: 640px;">
+  <div class="container" >
+    <h2 style="text-align: center"> Sign in </h2>
+    <h4 style="text-align: center" class="mb-5"> to continue to ONB campus </h4>
+    <div class="row">
+      <div class="col-sm-4">
+
+      </div>
+      
+      <div class="col-sm-4" style="margin-top:50px">
+        <form #ref="ngForm" (ngSubmit)="sign(ref.value)">
+          <div class="form-group">
+            <label> UserId </label>
+            <input type="email" name="email" placeholder="enteruserid" class="form-control"
+             [(ngModel)]="email" #ref1="ngModel" required>
+            <label *ngIf="ref1.invalid"> </label> <br/>
+
+            <label> Password </label>
+            <input type="password" name="password" placeholder="enterpassword" class="form-control"
+             [(ngModel)]="password" #ref2="ngModel" required> 
+            <label *ngIf="ref2.invalid"> invalid password </label> <br/>
+            <button type="submit" class="btn btn-success"> Next </button> <br/>
+
+            <!-- <button type="button" class="btn btn-success fluid-left" routerLink="admin" > Next to admin </button> <br/>
+            <button type="button" class="btn btn-success fluid-right" routerLink="student"> Next to student </button> -->
+          </div>
+        </form>
+
+      </div>
+
+      <div class="col-sm-4">
+        
+        </div>
+    </div>
+  </div>
+</div>
+
+
+

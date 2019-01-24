@@ -1,0 +1,248 @@
+<!-- <div class="container">
+  <table class="table">
+    <thead>
+      
+    </thead>
+
+    <tr *ngFor="let i of data">
+      <td>First Name</td>
+      <td> {{i.firstname}} </td>
+    </tr>
+
+    
+      <tr *ngFor="let i of data">
+          <td>Middle Name</td>
+          <td> {{i.middlename}} </td>
+      </tr>
+
+      <tr *ngFor="let i of data">
+          <td> Last Name</td>
+          <td> {{i.lastname}} </td>
+
+      </tr>
+
+      <tr *ngFor="let i of data">
+          <td> Email Id</td>
+          <td> {{i.emailid}} </td>
+
+      </tr>
+
+      <tr *ngFor="let i of data">
+          <td> Password</td>
+          <td> {{i.password}} </td>
+
+      </tr>
+
+      <tr *ngFor="let i of data">
+          <td> Date of Birth</td>
+          <td> {{i.dateofbirth}} </td>
+
+      </tr>
+
+      <tr *ngFor="let i of data">
+          <td> Roll Number</td>
+          <td> {{i.rollnumber}} </td>
+
+      </tr>
+
+      <tr *ngFor="let i of data">
+          <td> Category</td>
+          <td> {{i.category}} </td>
+
+      </tr>
+
+      <tr *ngFor="let i of data">
+          <td> Branch</td>
+          <td> {{i.branch}} </td>
+
+      </tr>
+
+      <tr *ngFor="let i of data">
+          <td> Gender</td>
+          <td> gender </td>
+
+      </tr>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+  </table>
+
+  <button type="button" class="btn btn-warning float-left"> edit </button> 
+  <button type="button" class="btn btn-warning float-right"> save </button>
+</div> -->
+
+
+<!-- interpolating data from database to server to component -->
+
+<div class="container">
+    <table class="table">
+      <thead>
+        
+      </thead>
+  
+      <tr *ngFor="let i of data1">
+        <td>First Name</td>
+        <td> {{i.firstname}} </td>
+      </tr>
+  
+      
+        <tr *ngFor="let i of data1">
+            <td> Middle Name </td>
+            <td> {{i.middlename}} </td>
+        </tr>
+  
+        <tr *ngFor="let i of data1">
+            <td> Last Name </td>
+            <td> {{i.lastname}} </td>
+  
+        </tr>
+  
+        <tr *ngFor="let i of data1">
+            <td> Email Id </td>
+            <td> {{i.email}} </td>
+  
+        </tr>
+  
+        <!-- <tr *ngFor="let i of data1">
+            <td> Password </td>
+            <td> {{i.password}} </td>
+  
+        </tr> -->
+  
+        <tr *ngFor="let i of data1">
+            <td> Date Of Birth </td>
+            <td> {{i.dateofbirth}} </td>
+  
+        </tr>
+  
+        <tr *ngFor="let i of data1">
+            <td> Roll Number </td>
+            <td> {{i.rollnumber}} </td>
+  
+        </tr>
+  
+        <tr *ngFor="let i of data1">
+            <td> Category </td>
+            <td> {{i.category }} </td>
+  
+        </tr>
+  
+        <tr *ngFor="let i of data1">
+            <td> Branch </td>
+            <td> {{i.branch}} </td>
+  
+        </tr>
+  
+        <tr *ngFor="let i of data1">
+            <td> Gender</td>
+            <td> {{i.gender}} </td>
+  
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      
+    </table>
+   
+  
+   
+   
+
+
+            
+
+
+
+
+
+
+    
+  </div>
+
+
+  <!-- update feild -->
+
+
+
+
+  <tr *ngFor="let i of data1">
+
+        <button type="button" class="btn btn-warning float-left" (click)="edit(i)"> edit </button> 
+      </tr>
+  
+        
+  
+  
+  
+        <form #ref="ngForm"  *ngIf="b">
+          <div class="form-group form-check" >
+            <label> First Name </label>
+            <input type="text" name="firstname" class="form-control" [(ngModel)]= "data.firstname"  >
+            
+             <br/>
+  
+            <label> Middle Name </label>
+            <input type="text" name="middlename" class="form-control" [(ngModel)]="data.middlename" >
+             <br/>
+  
+            <label> Last Name </label >
+            <input type="text" name="lastname" class="form-control" [(ngModel)]="data.lastname" >
+            
+            <br/>
+  
+            <label> Email Id </label>
+            <input type="email" name="email" class="form-control" [(ngModel)]="data.email" >
+            
+            <br/>
+  
+            <!-- <label> Password </label>
+            <input type="password" name="password" class="form-control" [(ngModel)]="data.password" >
+            
+            
+            <br/> -->
+  
+            <label> Date Of Birth </label>
+            <input type="date" name="dateofbirth" class="form-control"  [(ngModel)]="data.dateofbirth"> <br/>
+  
+            <label> Roll Number </label>
+            <input type="text" name="rollnumber" class="form-control" [(ngModel)]="data.rollnumber"> <br/>
+  
+            <label> Category </label>
+            <select class="ml-3" name="category" [(ngModel)]="data.category">
+              <option> Admin </option>
+              <option> Student </option>
+            </select> <br/>
+  
+            <label> Branch </label>
+            <select class="ml-3" name="branch" [(ngModel)]="data.branch">
+              <option> ECE </option>
+              <option> CSE </option>
+              <option> MCA </option>
+              <option> IT </option>
+              <option> CIVIL </option>
+            </select> <br/>
+  
+            <label> Gender </label> <br/>
+            <input type="radio" name="gender" value="male" [(ngModel)]="data.gender" class="form-check-input">
+            <label class="form-check-label"> Male </label> <br/>
+            <input type="radio" name="gender" value="female" [(ngModel)]="data.gender" class="form-check-input">
+            <label class="form-check-label"> Female </label> <br/>
+            <button type="button" class="btn btn-success d-block mx-auto" (click)="save()"> save </button>
+            
+          </div>
+        </form>
+
+    

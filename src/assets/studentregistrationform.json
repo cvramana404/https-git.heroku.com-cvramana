@@ -1,0 +1,39 @@
+[{"firstname":"venkata",
+    "middlename":"ramana",
+    "lastname":"chintam",
+    "emailid":"cvramana404@gmail.com",
+    "password":123456,
+    "dateofbirth":24,
+    "rollnumber":"ramana404",
+    "category":"admin-student",
+    "branch":"ece",
+    "gender":"male"
+    
+    },
+    {"firstname":"venkata",
+        "middlename":"ramana",
+        "lastname":"chintam",
+        "emailid":"cvramana404@gmail.com",
+        "password":123456,
+        "dateofbirth":24,
+        "rollnumber":"ramana404",
+        "category":"admin-student",
+        "branch":"ece",
+        "gender":"male"
+        
+        },
+        {"firstname":"venkata",
+            "middlename":"ramana",
+            "lastname":"chintam",
+            "emailid":"cvramana404@gmail.com",
+            "password":123456,
+            "dateofbirth":24,
+            "rollnumber":"ramana404",
+            "category":"admin-student",
+            "branch":"ece",
+            "gender":"male"
+            
+            }]
+    
+
+    
