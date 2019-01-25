@@ -12,6 +12,15 @@ export class RegisterComponent implements OnInit {
   data2:object[]=[];
   firstname:string;
   middlename:string;
+  lastname:string;
+  email:string;
+  password:string;
+  dateofbirth:string;
+  rollnumber:string;
+  category:string;
+  branch:string;
+  gender:string;
+  
   constructor(private http:HttpClient, private ds:RegisterService) { }
 
   ngOnInit() 
