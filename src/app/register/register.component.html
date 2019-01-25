@@ -10,7 +10,7 @@
       <form #ref="ngForm" (ngSubmit)="first(ref.value)">
         <div class="form-group form-check" >
           <label> First Name </label>
-          <input type="text" name="firstname" class="form-control" [(ngModel)]= firstname #ref1="ngModel" required >
+          <input type="text" name='firstname' class="form-control" [(ngModel)]= 'firstname' #ref1="ngModel" required >
           <label *ngIf="ref1.touched && ref1.errors?.required"> *Mandatory </label>
            <br/>
 
