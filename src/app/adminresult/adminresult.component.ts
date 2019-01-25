@@ -11,6 +11,17 @@ export class AdminresultComponent implements OnInit {
   arr:object[]=[];
   b:boolean=false;
   data5:any[]=[];
+  name:string;
+  branch:string;
+  subject1:string;
+  marks1:string;
+  subject2:string;
+  marks2:string;
+  subject3:string;
+  marks3:string;
+  subject4:string;
+  marks4:string;
+  
 
   constructor(private adminresults:AdminresultService, private http:HttpClient) { }
 

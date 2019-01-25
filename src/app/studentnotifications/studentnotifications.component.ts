@@ -15,7 +15,7 @@ export class StudentnotificationsComponent implements OnInit {
 
 
 
-  
+  searchTerm:string;
   arr:object;
   data4:any[]=[];
 
