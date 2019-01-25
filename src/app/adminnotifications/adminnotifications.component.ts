@@ -17,7 +17,7 @@ export class AdminnotificationsComponent implements OnInit {
   date:any;
   notifications:string;
   sendData:object[]=[];
-
+  searchTerm:string;
   arr1:object[]=[];
   data3:any[]=[];
   
