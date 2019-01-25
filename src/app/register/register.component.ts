@@ -10,7 +10,8 @@ import { RegisterService } from '../register.service';
 export class RegisterComponent implements OnInit {
 
   data2:object[]=[];
-
+  firstname:string;
+  middlename:string;
   constructor(private http:HttpClient, private ds:RegisterService) { }
 
   ngOnInit() 
