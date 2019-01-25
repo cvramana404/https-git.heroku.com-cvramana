@@ -10,41 +10,41 @@
       <form #ref="ngForm" (ngSubmit)="first(ref.value)">
         <div class="form-group form-check" >
           <label> First Name </label>
-          <input type="text" name="firstname" class="form-control" [(ngModel)]= "firstname" #ref1="ngModel" required >
+          <input type="text" name="firstname" class="form-control" [(ngModel)]= firstname #ref1="ngModel" required >
           <label *ngIf="ref1.touched && ref1.errors?.required"> *Mandatory </label>
            <br/>
 
           <label> Middle Name </label>
-          <input type="text" name="middlename" class="form-control" [(ngModel)]="middlename" #ref2="ngModel" required>
+          <input type="text" name="middlename" class="form-control" [(ngModel)]=middlename #ref2="ngModel" required>
           <label *ngIf="ref2.touched && ref2.errors?.required"> *Mandatory </label> <br/>
 
           <label> Last Name </label >
-          <input type="text" name="lastname" class="form-control" [(ngModel)]="lastname" #ref3="ngModel" required>
+          <input type="text" name="lastname" class="form-control" [(ngModel)]=lastname #ref3="ngModel" required>
           <label *ngIf="ref3.touched && ref3.errors?.required"> *Mandatory </label> <br/>
 
           <label> Email Id </label>
-          <input type="email" name="email" class="form-control" [(ngModel)]="email" #ref4="ngModel" required>
+          <input type="email" name="email" class="form-control" [(ngModel)]=email #ref4="ngModel" required>
           <label *ngIf="ref4.touched && ref4.errors?.required"> *Mandatory </label> <br/>
 
           <label> Password </label>
-          <input type="password" name="password" class="form-control" [(ngModel)]="password" #ref5="ngModel" required pattern="[^a-bA-b]{1}[A-Z]{1}.*">
+          <input type="password" name="password" class="form-control" [(ngModel)]=password #ref5="ngModel" required pattern="[^a-bA-b]{1}[A-Z]{1}.*">
           <label *ngIf="ref5.touched && ref5.errors?.required"> *Mandatory </label>
           <label *ngIf="ref5.errors?.pattern && ref5.invalid"> Enter Pattern Start with Special charecter next is upper case alphabet end with any</label> <br/>
 
           <label> Date Of Birth </label>
-          <input type="date" name="dateofbirth" class="form-control"  [(ngModel)]="dateofbirth"> <br/>
+          <input type="date" name="dateofbirth" class="form-control"  [(ngModel)]=dateofbirth > <br/>
 
           <label> Roll Number </label>
-          <input type="text" name="rollnumber" class="form-control" [(ngModel)]="rollnumber"> <br/>
+          <input type="text" name="rollnumber" class="form-control" [(ngModel)]=rollnumber> <br/>
 
           <label> Category </label>
-          <select class="ml-3" name="category" [(ngModel)]="category">
+          <select class="ml-3" name="category" [(ngModel)]=category>
             <option> Admin </option>
             <option> Student </option>
           </select> <br/>
 
           <label> Branch </label>
-          <select class="ml-3" name="branch" [(ngModel)]="branch">
+          <select class="ml-3" name="branch" [(ngModel)]=branch>
             <option> ECE </option>
             <option> CSE </option>
             <option> MCA </option>
@@ -53,9 +53,9 @@
           </select> <br/>
 
           <label> Gender </label> <br/>
-          <input type="radio" name="gender" value="male" [(ngModel)]="gender" class="form-check-input">
+          <input type="radio" name="gender" value="male" [(ngModel)]=gender class="form-check-input">
           <label class="form-check-label"> Male </label> <br/>
-          <input type="radio" name="gender" value="female" [(ngModel)]="gender" class="form-check-input">
+          <input type="radio" name="gender" value="female" [(ngModel)]=gender class="form-check-input">
           <label class="form-check-label"> Female </label> <br/>
 
           <button type="submit" class="btn btn-success d-block mx-auto" [disabled]="ref.invalid"> Submit </button>

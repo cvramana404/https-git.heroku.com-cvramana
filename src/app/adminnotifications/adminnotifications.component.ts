@@ -54,11 +54,13 @@ this.ds1.receivedFromAdminNotification(v);
 
   b:boolean=false;
   arr2:object;
-  edit(k):void
-  {
-    this.b=true;
-    this.arr2=k;
-  }
+
+
+  // edit(k):void
+  // {
+  //   this.b=true;
+  //   this.arr2=k;
+  // }
   done():void
   {
     this.b=false;
@@ -71,6 +73,12 @@ this.ds1.receivedFromAdminNotification(v);
     // this.ds.receivedfromA(this.arr1);
 
     
+  }
+
+  editData(u)
+  {
+    
+
   }
 
 
