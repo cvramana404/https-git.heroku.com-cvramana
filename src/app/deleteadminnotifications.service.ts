@@ -22,6 +22,6 @@ export class DeleteadminnotificationsService {
       headers:new HttpHeaders({'content-type':'application/json'}),
       body:z
     };
-this.http.delete<any>('admin/adminnotifications',httpOptions).subscribe(temp=>{this.data6=temp;});
+this.http.delete<any>('admin/adminnotifications',httpOptions).subscribe(temp=>{alert(temp)});
   }
 }

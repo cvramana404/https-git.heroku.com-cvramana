@@ -23,4 +23,9 @@ export class AdminnotificationsService {
     
     });
   }
+
+  fromAdminNotificationsEdit(d)
+  {
+    this.http.put('admin/adminnotifications',d).subscribe(temp=>{alert(temp)})
+  }
 }

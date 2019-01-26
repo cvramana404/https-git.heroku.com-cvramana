@@ -1,189 +1,194 @@
-<div class="container">
+<div class="container table-responsive">
+  <div class="row">
+    <div class="col-sm">
+        <input type="text" name="searchTerm" placeholder="Search Here" class="mt-3 mb-3" [(ngModel)]=searchTerm>
 
-  <!--------------------Input Data---------------------------->
-  <form #ref="ngForm" (ngSubmit)="add(ref.value)">
-    <div class="form-group">
-      <label> Student Name </label>
-      <input type="text" name="name" class="form-control" [(ngModel)]=name>
-      <label> Branch </label>
-      <input type="text" name="branch" class="form-control" [(ngModel)]=branch>
-      
+                  <!--------------------Input Data---------------------------->
+                  <form #ref="ngForm" (ngSubmit)="add(ref.value)">
+                    <div class="form-group">
+                      <label> Student Name </label>
+                      <input type="text" name="name" class="form-control" [(ngModel)]=name>
+                      <label> Branch </label>
+                      <input type="text" name="branch" class="form-control" [(ngModel)]=branch>
+                      
 
-        <div class="row">
-          <div class="col-sm-6">
-            <label> Subject1 </label>
-            <input type="text" name="subject1" class="form-control" [(ngModel)]=subject1>
-          </div>
-          <div class="col-sm-6">
-            <label> Marks </label>
-            <input type="text" name="marks1" class="form-control" [(ngModel)]=marks1>
-          </div>
-        </div>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <label> Subject1 </label>
+                            <input type="text" name="subject1" class="form-control" [(ngModel)]=subject1>
+                          </div>
+                          <div class="col-sm-6">
+                            <label> Marks </label>
+                            <input type="text" name="marks1" class="form-control" [(ngModel)]=marks1>
+                          </div>
+                        </div>
 
-        <div class="row">
-          <div class="col-sm-6">
-            <label> Subject2 </label>
-            <input type="text" name="subject2" class="form-control" [(ngModel)]=subject2>
-          </div>
-          <div class="col-sm-6">
-              <label> Marks </label>
-              <input type="text" name="marks2" class="form-control" [(ngModel)]=marks2>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-sm-6">
-            <label> Subject3 </label>
-            <input type="text" name="subject3" class="form-control" [(ngModel)]=subject3>
-          </div>
-          <div class="col-sm-6">
-              <label> Marks </label>
-              <input type="text" name="marks3" class="form-control" [(ngModel)]=marks3>
-          </div>
-        </div>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <label> Subject2 </label>
+                            <input type="text" name="subject2" class="form-control" [(ngModel)]=subject2>
+                          </div>
+                          <div class="col-sm-6">
+                              <label> Marks </label>
+                              <input type="text" name="marks2" class="form-control" [(ngModel)]=marks2>
+                          </div>
+                        </div>
 
 
-        <div class="row">
-          <div class="col-sm-6">
-            <label> Subject4 </label>
-            <input type="text" name="subject4" class="form-control" [(ngModel)]=subject4> 
-          </div>
-          <div class="col-sm-6">
-              <label> Marks </label>
-              <input type="text" name="marks4" class="form-control" [(ngModel)]=marks4>
-          </div>
-        </div> <br/>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <label> Subject3 </label>
+                            <input type="text" name="subject3" class="form-control" [(ngModel)]=subject3>
+                          </div>
+                          <div class="col-sm-6">
+                              <label> Marks </label>
+                              <input type="text" name="marks3" class="form-control" [(ngModel)]=marks3>
+                          </div>
+                        </div>
 
 
-      <button type="submit"> Submit </button>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <label> Subject4 </label>
+                            <input type="text" name="subject4" class="form-control" [(ngModel)]=subject4> 
+                          </div>
+                          <div class="col-sm-6">
+                              <label> Marks </label>
+                              <input type="text" name="marks4" class="form-control" [(ngModel)]=marks4>
+                          </div>
+                        </div> <br/>
+
+
+                      <button type="submit"> Submit </button>
+                    </div>
+                  </form>
+
+                  <!--------------------------edit  results----------------->
+
+                  <form #ref1="ngForm" *ngIf="b" >
+                      <div class="form-group">
+                        <label> Student Name </label>
+                        <input type="text" name="name" class="form-control" [(ngModel)]=arr2.name>
+                        <label> Branch </label>
+                        <input type="text" name="branch" class="form-control" [(ngModel)]=arr2.branch>
+                        
+                  
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <label> Subject1 </label>
+                              <input type="text" name="subject1" class="form-control" [(ngModel)]=arr2.subject1>
+                            </div>
+                            <div class="col-sm-6">
+                              <label> Marks </label>
+                              <input type="text" name="marks1" class="form-control" [(ngModel)]=arr2.marks1>
+                            </div>
+                          </div>
+                  
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <label> Subject2 </label>
+                              <input type="text" name="subject2" class="form-control" [(ngModel)]=arr2.subject2>
+                            </div>
+                            <div class="col-sm-6">
+                                <label> Marks </label>
+                                <input type="text" name="marks2" class="form-control" [(ngModel)]=arr2.marks2>
+                            </div>
+                          </div>
+                  
+                  
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <label> Subject3 </label>
+                              <input type="text" name="subject3" class="form-control" [(ngModel)]=arr2.subject3>
+                            </div>
+                            <div class="col-sm-6">
+                                <label> Marks </label>
+                                <input type="text" name="marks3" class="form-control" [(ngModel)]=arr2.marks3>
+                            </div>
+                          </div>
+                  
+                  
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <label> Subject4 </label>
+                              <input type="text" name="subject4" class="form-control" [(ngModel)]=arr2.subject4> 
+                            </div>
+                            <div class="col-sm-6">
+                                <label> Marks </label>
+                                <input type="text" name="marks4" class="form-control" [(ngModel)]=arr2.marks4>
+                            </div>
+                          </div> <br/>
+                  
+                  
+                        <button type="button" (click)="done()"> save </button>
+                      </div>
+                  </form>
+
+                  <!---------------add data to table-------------------->
+
+                  <!-- <table class="table">
+                    <thead>
+                      <th> Student Name </th>
+                      <th> Branch </th>
+                      <th> Subject1 </th>
+                      <th> Marks </th>
+                      <th> Subject2 </th>
+                      <th> Marks </th>
+                      <th> Subject3 </th>
+                      <th> Marks </th>
+                      <th> Subject4 </th>
+                      <th> Marks </th>
+                    </thead>
+                    <tr *ngFor="let i of arr, let in=index">
+                      <td> {{i.name}} </td>
+                      <td> {{i.branch}} </td>
+                      <td> {{i.subject1}} </td>
+                      <td> {{i.marks1}} </td>
+                      <td> {{i.subject2}} </td>
+                      <td> {{i.marks2}} </td>
+                      <td> {{i.subject3}} </td>
+                      <td> {{i.marks3}} </td>
+                      <td> {{i.subject4}} </td>
+                      <td> {{i.marks4}} </td>
+                      <button type="button" class="btn btn-danger" (click)="delete(in)"> X </button>
+                      <button type="button" class="btn btn-danger" (click)="edit(i)"> edit </button>
+                      <button type="button" class="btn btn-danger" (click)="send(i)"> send </button>
+                    </tr>
+                  </table> -->
+
+
+
+                  <!---------------getting data from database-------------------->
+
+                  <table class="table table-bordered">
+                    <thead class="thead-dark">
+                      <th> Student Name </th>
+                      <th> Branch </th>
+                      <th> Subject1 </th>
+                      <th> Marks </th>
+                      <th> Subject2 </th>
+                      <th> Marks </th>
+                      <th> Subject3 </th>
+                      <th> Marks </th>
+                      <th> Subject4 </th>
+                      <th> Marks </th>
+                    </thead>
+                    <tr *ngFor="let i of data5 | search:searchTerm, let in=index">
+                      <td> {{i.name}} </td>
+                      <td> {{i.branch}} </td>
+                      <td> {{i.subject1}} </td>
+                      <td> {{i.marks1}} </td>
+                      <td> {{i.subject2}} </td>
+                      <td> {{i.marks2}} </td>
+                      <td> {{i.subject3}} </td>
+                      <td> {{i.marks3}} </td>
+                      <td> {{i.subject4}} </td>
+                      <td> {{i.marks4}} </td>
+                      <button type="button" class="btn btn-danger mr-2" (click)="delete(i)"> delete </button>
+                      <button type="button" class="btn btn-danger" (click)="edit(i)"> edit </button>
+                      
+                    </tr>
+                  </table>
     </div>
-  </form>
-
-  <!--------------------------edit  results----------------->
-
-  <form #ref1="ngForm" *ngIf="b" (ngSubmit)="save(h)">
-      <div class="form-group">
-        <label> Student Name </label>
-        <input type="text" name="name" class="form-control" [(ngModel)]=arr2.name>
-        <label> Branch </label>
-        <input type="text" name="branch" class="form-control" [(ngModel)]=arr2.branch>
-        
-  
-          <div class="row">
-            <div class="col-sm-6">
-              <label> Subject1 </label>
-              <input type="text" name="subject1" class="form-control" [(ngModel)]=arr2.subject1>
-            </div>
-            <div class="col-sm-6">
-              <label> Marks </label>
-              <input type="text" name="marks1" class="form-control" [(ngModel)]=arr2.marks1>
-            </div>
-          </div>
-  
-          <div class="row">
-            <div class="col-sm-6">
-              <label> Subject2 </label>
-              <input type="text" name="subject2" class="form-control" [(ngModel)]=arr2.subject2>
-            </div>
-            <div class="col-sm-6">
-                <label> Marks </label>
-                <input type="text" name="marks2" class="form-control" [(ngModel)]=arr2.marks2>
-            </div>
-          </div>
-  
-  
-          <div class="row">
-            <div class="col-sm-6">
-              <label> Subject3 </label>
-              <input type="text" name="subject3" class="form-control" [(ngModel)]=arr2.subject3>
-            </div>
-            <div class="col-sm-6">
-                <label> Marks </label>
-                <input type="text" name="marks3" class="form-control" [(ngModel)]=arr2.marks3>
-            </div>
-          </div>
-  
-  
-          <div class="row">
-            <div class="col-sm-6">
-              <label> Subject4 </label>
-              <input type="text" name="subject4" class="form-control" [(ngModel)]=arr2.subject4> 
-            </div>
-            <div class="col-sm-6">
-                <label> Marks </label>
-                <input type="text" name="marks4" class="form-control" [(ngModel)]=arr2.marks4>
-            </div>
-          </div> <br/>
-  
-  
-        <button type="button" (click)="done()"> save </button>
-      </div>
-  </form>
-
-  <!---------------add data to table-------------------->
-
-  <table class="table">
-    <thead>
-      <th> Student Name </th>
-      <th> Branch </th>
-      <th> Subject1 </th>
-      <th> Marks </th>
-      <th> Subject2 </th>
-      <th> Marks </th>
-      <th> Subject3 </th>
-      <th> Marks </th>
-      <th> Subject4 </th>
-      <th> Marks </th>
-    </thead>
-    <tr *ngFor="let i of arr, let in=index">
-      <td> {{i.name}} </td>
-      <td> {{i.branch}} </td>
-      <td> {{i.subject1}} </td>
-      <td> {{i.marks1}} </td>
-      <td> {{i.subject2}} </td>
-      <td> {{i.marks2}} </td>
-      <td> {{i.subject3}} </td>
-      <td> {{i.marks3}} </td>
-      <td> {{i.subject4}} </td>
-      <td> {{i.marks4}} </td>
-      <button type="button" class="btn btn-danger" (click)="delete(in)"> X </button>
-      <button type="button" class="btn btn-danger" (click)="edit(i)"> edit </button>
-      <button type="button" class="btn btn-danger" (click)="send(i)"> send </button>
-    </tr>
-  </table>
-
-
-
-  <!---------------getting data from database-------------------->
-
-  <table class="table">
-    <thead>
-      <th> Student Name </th>
-      <th> Branch </th>
-      <th> Subject1 </th>
-      <th> Marks </th>
-      <th> Subject2 </th>
-      <th> Marks </th>
-      <th> Subject3 </th>
-      <th> Marks </th>
-      <th> Subject4 </th>
-      <th> Marks </th>
-    </thead>
-    <tr *ngFor="let i of data5, let in=index">
-      <td> {{i.name}} </td>
-      <td> {{i.branch}} </td>
-      <td> {{i.subject1}} </td>
-      <td> {{i.marks1}} </td>
-      <td> {{i.subject2}} </td>
-      <td> {{i.marks2}} </td>
-      <td> {{i.subject3}} </td>
-      <td> {{i.marks3}} </td>
-      <td> {{i.subject4}} </td>
-      <td> {{i.marks4}} </td>
-      <button type="button" class="btn btn-danger" (click)="delete(in)"> X </button>
-      <button type="button" class="btn btn-danger" (click)="edit(i)"> edit </button>
-      <button type="button" class="btn btn-danger" (click)="send(i)"> send </button>
-    </tr>
-  </table>
+  </div>
 </div>

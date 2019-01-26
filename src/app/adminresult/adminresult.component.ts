@@ -11,6 +11,7 @@ export class AdminresultComponent implements OnInit {
   arr:object[]=[];
   b:boolean=false;
   data5:any[]=[];
+  searchTerm:string;
   name:string;
   branch:string;
   subject1:string;
@@ -34,13 +35,23 @@ this.http.get<any>('admin/adminresult').subscribe(temp=>{this.data5=temp;})
   {
 this.arr.push(v);
 console.log(v);
+this.name='';
+this.branch='';
+this.subject1='';
+this.marks1='';
+this.subject2='';
+this.marks2='';
+this.subject3='';
+this.marks3='';
+this.subject4='';
+this.marks4='';
+
+
+this.adminresults.receivedFromAdminResult(v);
 
   }
 
-  delete(v):void
-  {
-this.arr.splice(v,1);
-  }
+  
   
 
   arr2:object;
@@ -55,11 +66,14 @@ this.arr.splice(v,1);
   done()
   {
     this.b=false;
+    this.adminresults.receivedFromAdminResultEdit(this.arr2);
   }
-  send(v)
+
+  delete(v):void
   {
-    this.adminresults.receivedFromAdminResult(v);
-    
+
+this.adminresults.receivedFromAdminResultDelete(v);
   }
+  
 
 }

@@ -143,7 +143,7 @@ app.post('/home/login',(req,res,next)=>{
 })
 
 
-//getting data from data base to admin profile or student profile
+//getting data from data base to admin profile
 app.get('/admin/adminprofile',(req,res,next)=>{
     dbo.collection('registration').find({email:s}).toArray((err,data)=>{
         if(err)
@@ -159,83 +159,6 @@ app.get('/admin/adminprofile',(req,res,next)=>{
     )}
 
 )
-
-//getting data from data base to student profile
-
-app.get('/student/studentprofile',(req,res,next)=>{
-    dbo.collection('registration').find({email:s}).toArray((err,data)=>{
-        if(err)
-        {
-            console.log("err");
-        }
-        else
-        {
-            res.send(data);
-        }
-
-    }
-    )}
-
-)
-
-
-
-//admin notifications operation
-app.post('/admin/adminnotifications',(req,res,next)=>{
-    
-    dbo.collection('adminnotifications').insertOne({name:req.body.name,
-                                                    date:req.body.date,
-                                                    notifications:req.body.notifications},()=>{
-                                                        res.json("notification created successfully")
-                                                    })
-})
-
-//getting data from database to admin notifications
-app.get('/admin/adminnotifications',(req,res,next)=>{
-    dbo.collection('adminnotifications').find({}).toArray((err,data)=>{
-        if(err)
-        {
-            console.log('err')
-        }
-        else
-        {
-            res.json(data);
-        }
-    })
-})
-
-
-//admin results operation
-app.post('/admin/adminresult',(req,res,next)=>{
-    dbo.collection('adminresults').insertOne({name:req.body.name,
-                                            branch:req.body.branch,
-                                            subject1:req.body.subject1,
-                                            marks1:req.body.marks1,
-                                            subject2:req.body.subject2,
-                                            marks2:req.body.marks2,
-                                            subject3:req.body.subject3,
-                                            marks3:req.body.marks3,
-                                            subject4:req.body.subject4,
-                                            marks4:req.body.marks4},()=>{
-                                                res.json("results genetated succssfully")
-                                            })
-})
-
-
-//getting data from database to admin results
-app.get('/admin/adminresult',(req,res,next)=>{
-    dbo.collection('adminresults').find({}).toArray((err,data)=>{
-        if(err)
-        {
-            console.log('err');
-        }
-        else
-        {
-            res.json(data);
-        }
-    })
-})
-
 
 //update of admin profile
 
@@ -276,6 +199,23 @@ app.put('/admin/adminprofile',(req,res)=>{
     })
 })
 
+//getting data from data base to student profile
+
+app.get('/student/studentprofile',(req,res,next)=>{
+    dbo.collection('registration').find({email:s}).toArray((err,data)=>{
+        if(err)
+        {
+            console.log("err");
+        }
+        else
+        {
+            res.send(data);
+        }
+
+    }
+    )}
+
+)
 
 //update of student profile
 
@@ -317,6 +257,207 @@ app.put('/student/studentprofile',(req,res)=>{
 })
 
 
+
+//admin notifications operation wing
+//admin notifications post operation
+app.post('/admin/adminnotifications',(req,res,next)=>{
+    
+    dbo.collection('adminnotifications').insertOne({name:req.body.name,
+                                                    date:req.body.date,
+                                                    notifications:req.body.notifications},()=>{
+                                                        res.json("notification created successfully")
+                                                    })
+})
+
+//getting data from database to admin notifications
+app.get('/admin/adminnotifications',(req,res,next)=>{
+    dbo.collection('adminnotifications').find({}).toArray((err,data)=>{
+        if(err)
+        {
+            console.log('err')
+        }
+        else
+        {
+            res.json(data);
+        }
+    })
+})
+
+
+
+//update of admin Notifications
+
+app.put('/admin/adminnotifications',(req,res)=>{
+    //object received from client
+    console.log(req.body);
+    //converting strinng id into object id
+    var objectId=new mongoose.Types.ObjectId(req.body._id);
+    console.log(objectId);
+    //updating document in database
+    dbo.collection('adminnotifications').update({_id:objectId},{$set:{name:req.body.name,
+                                                                
+                                                                    date:req.body.date,
+                                                                    notifications:req.body.notifications
+                                                                }},(err,success)=>{
+        if(err)
+        {
+            console.log('err');
+        }
+        else
+        {
+            dbo.collection('adminnotifications').find({}).toArray((err,data)=>{
+                if(err)
+                {
+                    console.log('err');
+                }
+                else
+                {
+                    res.json("updated successfull");
+                }
+            })
+        }
+    })
+})
+
+
+//delete of admin Notifications
+app.delete('/admin/adminnotifications',(req,res)=>{
+    //object received from client
+    console.log(req.body);
+    //converting strinng id into object id
+    // var objectId=new mongoose.Types.ObjectId(req.body._id);
+    // console.log(objectId);
+    //delete document in database
+    dbo.collection('adminnotifications').remove({name:req.body.name},(err,success)=>{
+if(err)
+{
+    console.log('err');
+}
+else
+{
+    dbo.collection('adminnotifications').find({}).toArray((err,data)=>{
+        if(err)
+        {
+            console.log('err');
+        }
+        else
+        {
+            res.json("deleted succesfully");
+        }
+    })
+}
+                                                                })
+})
+
+
+//admin results operation wing
+//admin results post operation
+app.post('/admin/adminresult',(req,res,next)=>{
+    dbo.collection('adminresults').insertOne({name:req.body.name,
+                                            branch:req.body.branch,
+                                            subject1:req.body.subject1,
+                                            marks1:req.body.marks1,
+                                            subject2:req.body.subject2,
+                                            marks2:req.body.marks2,
+                                            subject3:req.body.subject3,
+                                            marks3:req.body.marks3,
+                                            subject4:req.body.subject4,
+                                            marks4:req.body.marks4},()=>{
+                                                res.json("results genetated succssfully")
+                                            })
+})
+
+
+//getting data from database to admin results
+app.get('/admin/adminresult',(req,res,next)=>{
+    dbo.collection('adminresults').find({}).toArray((err,data)=>{
+        if(err)
+        {
+            console.log('err');
+        }
+        else
+        {
+            res.json(data);
+        }
+    })
+})
+
+//update of admin results
+
+app.put('/admin/adminresult',(req,res)=>{
+    //object received from client
+    console.log(req.body);
+    //converting strinng id into object id
+    var objectId=new mongoose.Types.ObjectId(req.body._id);
+    console.log(objectId);
+    //updating document in database
+    dbo.collection('adminresults').update({_id:objectId},{$set:{name:req.body.name,
+                                                                branch:req.body.branch,
+                                                                subject1:req.body.subject1,
+                                                                marks1:req.body.marks1,
+                                                                subject2:req.body.subject2,
+                                                                marks2:req.body.marks2,
+                                                                subject3:req.body.subject3,
+                                                                marks3:req.body.marks3,
+                                                                subject4:req.body.subject4,
+                                                                marks4:req.body.marks4
+                                                                }},(err,success)=>{
+        if(err)
+        {
+            console.log('err');
+        }
+        else
+        {
+            dbo.collection('adminresults').find({}).toArray((err,data)=>{
+                if(err)
+                {
+                    console.log('err');
+                }
+                else
+                {
+                    res.json("updated successfull");
+                }
+            })
+        }
+    })
+})
+
+
+//delete of admin results
+app.delete('/admin/adminresult',(req,res)=>{
+    //object received from client
+    console.log(req.body);
+    //converting strinng id into object id
+    // var objectId=new mongoose.Types.ObjectId(req.body._id);
+    // console.log(objectId);
+    //delete document in database
+    dbo.collection('adminresults').remove({name:req.body.name},(err,success)=>{
+if(err)
+{
+    console.log('err');
+}
+else
+{
+    dbo.collection('adminresults').find({}).toArray((err,data)=>{
+        if(err)
+        {
+            console.log('err');
+        }
+        else
+        {
+            res.json("deleted succesfully");
+        }
+    })
+}
+                                                                })
+})
+
+
+
+
+
+
+
 //delete of student profile
 app.delete('/student/studentprofile',(req,res)=>{
     //object received from client
@@ -347,34 +488,7 @@ else
 })
 
 
-//delete of admin Notifications
-app.delete('/admin/adminnotifications',(req,res)=>{
-    //object received from client
-    console.log(req.body);
-    //converting strinng id into object id
-    // var objectId=new mongoose.Types.ObjectId(req.body._id);
-    // console.log(objectId);
-    //delete document in database
-    dbo.collection('adminnotifications').remove({name:req.body.name},(err,success)=>{
-if(err)
-{
-    console.log('err');
-}
-else
-{
-    dbo.collection('adminnotifications').find({}).toArray((err,data)=>{
-        if(err)
-        {
-            console.log('err');
-        }
-        else
-        {
-            res.json(data);
-        }
-    })
-}
-                                                                })
-})
+
 
 
 

@@ -34,6 +34,19 @@ export class RegisterComponent implements OnInit {
     
     this.ds.reciveFromRegister(v);
 
+    this.firstname='';
+    this.middlename='';
+    this.lastname='';
+    this.email='';
+    this.password='';
+    this.dateofbirth='';
+    this.rollnumber='';
+    this.category='';
+    this.branch='';
+    this.gender='';
+
+    
+
   }
   
 

@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
   {
 
     this.ds.receivedFromLogin(v);
+    this.email='';
+    this.password='';
 
 
     // if(v.email=="admin"){

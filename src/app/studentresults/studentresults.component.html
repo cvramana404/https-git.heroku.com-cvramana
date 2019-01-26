@@ -1,34 +1,39 @@
 
-<div class="container">
-<!---------------getting data from database to adminresults to student results-------------------->
+<div class="container table-responsive">
+  <div class="row">
+    <div class="col-sm">
+          <!---------------getting data from database to adminresults to student results-------------------->
+          <input type="text" name="searchTerm" placeholder="Search Here" class="mt-3 mb-3" [(ngModel)]=searchTerm>
 
-<table class="table">
-  <thead>
-    <th> Student Name </th>
-    <th> Branch </th>
-    <th> Subject1 </th>
-    <th> Marks </th>
-    <th> Subject2 </th>
-    <th> Marks </th>
-    <th> Subject3 </th>
-    <th> Marks </th>
-    <th> Subject4 </th>
-    <th> Marks </th>
-  </thead>
-  <tr *ngFor="let i of data6, let in=index">
-    <td> {{i.name}} </td>
-    <td> {{i.branch}} </td>
-    <td> {{i.subject1}} </td>
-    <td> {{i.marks1}} </td>
-    <td> {{i.subject2}} </td>
-    <td> {{i.marks2}} </td>
-    <td> {{i.subject3}} </td>
-    <td> {{i.marks3}} </td>
-    <td> {{i.subject4}} </td>
-    <td> {{i.marks4}} </td>
-    <button type="button" class="btn btn-danger" (click)="delete(in)"> X </button>
-    <button type="button" class="btn btn-danger" (click)="edit(i)"> edit </button>
-    <button type="button" class="btn btn-danger" (click)="send(i)"> send </button>
-  </tr>
-</table>
+          <table class="table table-bordered mt-3">
+            <thead class="thead-dark">
+              <th> Student Name </th>
+              <th> Branch </th>
+              <th> Subject1 </th>
+              <th> Marks </th>
+              <th> Subject2 </th>
+              <th> Marks </th>
+              <th> Subject3 </th>
+              <th> Marks </th>
+              <th> Subject4 </th>
+              <th> Marks </th>
+            </thead>
+            <tr *ngFor="let i of data6 | search:searchTerm, let in=index">
+              <td> {{i.name}} </td>
+              <td> {{i.branch}} </td>
+              <td> {{i.subject1}} </td>
+              <td> {{i.marks1}} </td>
+              <td> {{i.subject2}} </td>
+              <td> {{i.marks2}} </td>
+              <td> {{i.subject3}} </td>
+              <td> {{i.marks3}} </td>
+              <td> {{i.subject4}} </td>
+              <td> {{i.marks4}} </td>
+              <!-- <button type="button" class="btn btn-danger" (click)="delete(in)"> X </button>
+              <button type="button" class="btn btn-danger" (click)="edit(i)"> edit </button>
+              <button type="button" class="btn btn-danger" (click)="send(i)"> send </button> -->
+            </tr>
+          </table>
+    </div>
+  </div>
 </div>

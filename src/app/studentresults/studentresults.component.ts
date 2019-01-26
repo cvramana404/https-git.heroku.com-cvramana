@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StudentresultsComponent implements OnInit {
   data6:any[]=[];
+  searchTerm:string;
 
   constructor(private http:HttpClient) { }
 

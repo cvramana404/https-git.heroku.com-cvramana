@@ -43,6 +43,8 @@ this.arr.push(v);
 this.name="";
 this.date="";
 this.notifications="";
+
+
 console.log(v);
 this.ds1.receivedFromAdminNotification(v);
 
@@ -53,7 +55,7 @@ this.ds1.receivedFromAdminNotification(v);
 //   }
 
   b:boolean=false;
-  arr2:object;
+  arr2:object[]=[];
 
 
   // edit(k):void
@@ -61,10 +63,7 @@ this.ds1.receivedFromAdminNotification(v);
   //   this.b=true;
   //   this.arr2=k;
   // }
-  done():void
-  {
-    this.b=false;
-  }
+  
 
   send(g):void
   {
@@ -77,9 +76,18 @@ this.ds1.receivedFromAdminNotification(v);
 
   editData(u)
   {
+    this.b=true;
+    this.arr2=u;
     
 
   }
+
+  done():void
+  {
+    this.b=false;
+    this.ds1.fromAdminNotificationsEdit(this.arr2);
+  }
+  
 
 
 
