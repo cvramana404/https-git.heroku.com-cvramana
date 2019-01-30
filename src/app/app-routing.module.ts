@@ -13,6 +13,7 @@ import { StudentprofileComponent } from './studentprofile/studentprofile.compone
 import { StudentnotificationsComponent } from './studentnotifications/studentnotifications.component';
 import { StudentresultsComponent } from './studentresults/studentresults.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 const routes: Routes = [
                         {path:'home',component:HomeComponent,
@@ -26,7 +27,7 @@ const routes: Routes = [
                           children:[
                             {path:'adminprofile',component:AdminprofileComponent},
                             {path:'adminnotifications',component:AdminnotificationsComponent},
-                            {path:'adminresult',component:AdminresultComponent},{path:'',redirectTo:'adminprofile',pathMatch:'full'}
+                            {path:'adminresult',component:AdminresultComponent},{path:'userdetails',component:UserdetailsComponent} ,{path:'',redirectTo:'adminprofile',pathMatch:'full'}
                           ]
                         },
                    

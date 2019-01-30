@@ -33,7 +33,15 @@ export class AdminnotificationsComponent implements OnInit {
     //  this.ds.getData2().subscribe(temp=>{this.data=temp;})
 
     //getting data from data base
-    this.http.get<any>("admin/adminnotifications").subscribe(temp=>{this.data3=temp;})
+    this.http.get<any>("api/admin/adminnotifications").subscribe(temp=>{
+      if(temp['message']=='Token is not valid')
+      {
+        alert(temp['message']);
+      }
+      else
+      {
+        this.data3=temp;
+      } })
 
   }
 

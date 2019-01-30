@@ -14,7 +14,15 @@ export class StudentresultsComponent implements OnInit {
 
   ngOnInit() 
   {
-this.http.get<any>('admin/adminresult').subscribe(temp=>{this.data6=temp;})
+this.http.get<any>('api/admin/adminresult').subscribe(temp=>{
+  if(temp['message']=='Token is not valid')
+  {
+    alert(temp['message'])
+  }
+  else
+  {
+    this.data6=temp;
+  }})
   }
 
 }

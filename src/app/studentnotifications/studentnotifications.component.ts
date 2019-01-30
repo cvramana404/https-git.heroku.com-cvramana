@@ -27,7 +27,16 @@ export class StudentnotificationsComponent implements OnInit {
     // this.arr=this.ds.sendToB();
 
     //getting data from admin notifications to database to student notification
-    this.http.get<any>("admin/adminnotifications").subscribe(temp=>{this.data4=temp;});
+    this.http.get<any>("api/admin/adminnotifications").subscribe(temp=>{
+      if(temp['message']=='Token is not valid')
+      {
+        alert(temp['message'])
+      }
+      else
+      {
+        this.data4=temp;
+      } 
+    });
     
   }
 

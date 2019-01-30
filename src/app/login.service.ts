@@ -11,21 +11,24 @@ export class LoginService {
 
   receivedFromLogin(v)
   {
-    this.http.post('/home/login',v).subscribe(temp=>{alert(temp)
+    this.http.post('api/home/login',v).subscribe(res=>{
+      localStorage.setItem('id_token',res['idToken'])
+      
+        
 
-      if(temp==="user not existed")
+      if(res==="user not existed")
     {
       this.router.navigate(["home/login"]);
     }
-    if(temp==="wrong password")
+    if(res==="wrong password")
     {
       this.router.navigate(["home/login"]);
     }
-    if(temp==="logged in successfully as admin")
+    if(res['info']==="logged in admin")
     {
       this.router.navigate(["/admin"]);
     }
-    if(temp==="logged in successfully as student")
+    if(res['info']==="logged in student")
     {
       this.router.navigate(["/student"]);
     }

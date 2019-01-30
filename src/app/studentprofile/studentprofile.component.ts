@@ -23,7 +23,14 @@ p:number;
   {
 // this.ds.getData1().subscribe(temp=>{this.data1=temp;})
 
-this.http.get<any>("student/studentprofile").subscribe(temp=>{this.data2=temp;})
+this.http.get<any>("api/student/studentprofile").subscribe(temp=>{
+  if(temp['message']=="Token is not valid")
+  {
+alert(temp['message']);
+  }
+  else{  
+  
+  this.data2=temp;}})
   }
 
   edit(v)

@@ -10,7 +10,7 @@ export class AdminnotificationsService {
 
   receivedFromAdminNotification(g)
   {
-    this.http.post('admin/adminnotifications',g).subscribe(temp=>{alert(temp)
+    this.http.post('api/admin/adminnotifications',g).subscribe(temp=>{alert(temp)
 
     //   if(temp==="registered successfully")
     // {
@@ -26,6 +26,6 @@ export class AdminnotificationsService {
 
   fromAdminNotificationsEdit(d)
   {
-    this.http.put('admin/adminnotifications',d).subscribe(temp=>{alert(temp)})
+    this.http.put('api/admin/adminnotifications',d).subscribe(temp=>{alert(temp)})
   }
 }

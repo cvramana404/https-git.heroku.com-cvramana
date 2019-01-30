@@ -12,14 +12,14 @@ export class AdminresultService {
 
   receivedFromAdminResult(h)
   {
-this.http.post('admin/adminresult',h).subscribe(temp=>{alert(temp)});
+this.http.post('api/admin/adminresult',h).subscribe(temp=>{alert(temp)});
   }
   
   //admin results put operation
 
   receivedFromAdminResultEdit(k)
   {
-    this.http.put('admin/adminresult',k).subscribe(temp=>{alert(temp)});
+    this.http.put('api/admin/adminresult',k).subscribe(temp=>{alert(temp)});
   }
 
   //admin results delete operation
@@ -31,7 +31,7 @@ this.http.post('admin/adminresult',h).subscribe(temp=>{alert(temp)});
       headers:new HttpHeaders({'content-type':'application/json'}),
       body:v
     };
-this.http.delete<any>('admin/adminresult',httpOptions).subscribe(temp=>{alert(temp)});
+this.http.delete<any>('api/admin/adminresult',httpOptions).subscribe(temp=>{alert(temp)});
   }
   
 }

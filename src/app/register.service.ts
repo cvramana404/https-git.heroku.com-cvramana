@@ -16,7 +16,7 @@ export class RegisterService {
 
 this.data=v;
 console.log(v);
-this.http.post('home/register',v).subscribe(temp=>{alert(temp)
+this.http.post('api/home/register',v).subscribe(temp=>{alert(temp)
 
   if(temp==="registered successfully")
 {
@@ -36,7 +36,7 @@ if(temp==="user existed")
 
   fromAdminProfile(u)
   {
-    this.http.put('admin/adminprofile',u).subscribe(temp=>{alert(temp)})
+    this.http.put('api/admin/adminprofile',u).subscribe(temp=>{alert(temp)})
     console.log(u);
   }
 
@@ -44,7 +44,7 @@ if(temp==="user existed")
 
   fromStudentProfile(z)
   {
-    this.http.put('student/studentprofile',z).subscribe(temp=>{alert(temp)})
+    this.http.put('api/student/studentprofile',z).subscribe(temp=>{alert(temp)})
   }
 
   

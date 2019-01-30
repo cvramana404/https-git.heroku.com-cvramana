@@ -19,6 +19,6 @@ export class DeleteprofileService {
       headers:new HttpHeaders({'content-type':'application/json'}),
       body:z
     };
-this.http.delete<any>('student/studentprofile',httpOptions).subscribe(temp=>{this.data6=temp;});
+this.http.delete<any>('api/student/studentprofile',httpOptions).subscribe(temp=>{this.data6=temp;});
   }
 }

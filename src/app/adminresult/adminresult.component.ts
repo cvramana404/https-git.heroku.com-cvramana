@@ -8,9 +8,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./adminresult.component.css']
 })
 export class AdminresultComponent implements OnInit {
-  arr:object[]=[];
+  arr:any=[];
   b:boolean=false;
-  data5:any[]=[];
+  data5:any=[];
   searchTerm:string;
   name:string;
   branch:string;
@@ -28,7 +28,15 @@ export class AdminresultComponent implements OnInit {
 
   ngOnInit() 
   {
-this.http.get<any>('admin/adminresult').subscribe(temp=>{this.data5=temp;})
+this.http.get<any>('api/admin/adminresult').subscribe(temp=>{
+  if(temp['message']=='Token is not valid')
+  {
+    alert(temp['message'])
+  }
+  else
+  {
+    this.data5=temp;
+  }})
     }
 
   add(v):void
@@ -54,7 +62,7 @@ this.adminresults.receivedFromAdminResult(v);
   
   
 
-  arr2:object;
+  arr2:any=[];
   
   edit(h)
   {

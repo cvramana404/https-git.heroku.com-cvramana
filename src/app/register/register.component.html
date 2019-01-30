@@ -15,8 +15,8 @@
            <br/>
 
           <label> Middle Name </label>
-          <input type="text" name="middlename" class="form-control" [(ngModel)]=middlename #ref2="ngModel" required>
-          <label *ngIf="ref2.touched && ref2.errors?.required"> *Mandatory </label> <br/>
+          <input type="text" name="middlename" class="form-control" [(ngModel)]=middlename >
+          <!-- <label *ngIf="ref2.touched && ref2.errors?.required"> *Mandatory </label> <br/> --> <br/>
 
           <label> Last Name </label >
           <input type="text" name="lastname" class="form-control" [(ngModel)]=lastname #ref3="ngModel" required>

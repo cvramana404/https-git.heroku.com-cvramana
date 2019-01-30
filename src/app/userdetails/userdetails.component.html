@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <table class="table table-bordered mt-3">
+        <thead class="thead-dark">
+          <th> SNo</th>
+          <th> Name </th>
+          <th> Email Id</th>
+          <th> Roll Number</th>
+          <th> Category </th>
+        </thead>
+        <tr *ngFor="let i of data9, let in=index">
+          <td> {{in+1}} </td>
+          <td> {{i.firstname}} </td>
+          <td> {{i.email}} </td>
+          <td> {{i.rollnumber}} </td>
+          <td> {{i.category}} </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

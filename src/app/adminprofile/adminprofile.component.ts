@@ -15,13 +15,19 @@ export class AdminprofileComponent implements OnInit
   data1:any[]=[];
 
   constructor(private ds:DataService, private http:HttpClient, private update:RegisterService)   { }
-
+g:any;
   ngOnInit() 
   {
 // this.ds.getData().subscribe(temp=>{this.data=temp;})
 
-this.http.get<any>('admin/adminprofile').subscribe(temp=>{this.data1=temp;})
-
+this.http.get<any>('api/admin/adminprofile').subscribe(temp=>{
+if(temp['message']=='Token is not valid')
+{
+  alert(temp['message']);
+}
+else
+  {this.data1=temp;}})
+  
   }
 
   edit(v)
